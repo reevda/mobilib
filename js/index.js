@@ -28,8 +28,8 @@ $(document).on("pageshow", "#scanHome", function() {
 //		alert("Begin scan");
 		/* Phonegap BarcodeScanner Plugin */
 		try {
-//		scanner = cordova.require("com.phonegap.plugins.barcodescanner.BarcodeScanner");
-		var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+		scanner = cordova.require("com.phonegap.plugins.barcodescanner.BarcodeScanner");
+//		var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 		alert('scanner loaded');
 		navigator.notification.vibrate(1000);
 		}
