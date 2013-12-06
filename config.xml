@@ -2,8 +2,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "ch.mylib.mobilib"
-        version   = "1.0.4">
-    <name>Mobilib</name>
+        version   = "1.0.9">
+    <name>Mobilib 2 Github</name>
 
     <description>
         Application pour la recherche de livres de mylib.ch
