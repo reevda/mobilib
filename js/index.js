@@ -65,7 +65,7 @@ $(document).on("pageshow", "#scanHome", function() {
 	
 	$("#device").bind("click", function(){
 		alert("device clicked");
-		var model = device.cordova;
+		var model = window.device.model;
 		alert(model);
 	});
 });
