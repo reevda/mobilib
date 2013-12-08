@@ -16,6 +16,7 @@
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
 
     <feature name="http://api.phonegap.com/1.0/device" />
+    <feature name="http://api.phonegap.com/1.0/notification"/>
     <feature name="debug-server" required="true">
        <param name="domain" value="http://debug.phonegap.com"/>
        <param name="key" value="willoughby"/>
@@ -31,7 +32,6 @@
     <icon src="icon.png" />
     <content src="index.html" />
     <access origin="*" />
-    <feature name="http://api.phonegap.com/1.0/notification"/>
     
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/camera" />
