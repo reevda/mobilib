@@ -62,6 +62,12 @@ $(document).on("pageshow", "#scanHome", function() {
             console.log("Scanning failed: ", error); 
         });
 	});
+	
+	$("#device").bind("click", function(){
+		alert("device clicked");
+		var model = device.model;
+		alert(model);
+	});
 });
 
 $('#scan').on('click', function(event){
