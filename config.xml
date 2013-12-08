@@ -41,7 +41,9 @@
     <!-- Plugins -->
 	
 	<feature name="http://api.phonegap.com/1.0/device" />
-	
+	<feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
     <!-- Core plugins 
     <gap:plugin name="org.apache.cordova.battery-status" />
     <gap:plugin name="org.apache.cordova.camera" />
