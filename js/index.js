@@ -18,7 +18,7 @@
  */
 
 var db;
-$('#reposHome').bind('pageinit', function(event) {
+$('#reposHome').bind('pageinit', function (event) {
     loadRepos();
     db = window.openDatabase("repodb","0.1","GitHub Repo Db", 1000);
     db.transaction(createDb, txError, txSuccess);
@@ -201,7 +201,7 @@ function alertDismissed() {
 }
 
 
-//Récupère les paramètres d'une URL
+//R√©cup√®re les param√®tres d'une URL
 function getUrlVars() {
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
