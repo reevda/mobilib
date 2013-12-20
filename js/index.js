@@ -25,42 +25,28 @@ $('#reposHome').bind('pageinit', function (event) {
 });
 $(document).on("pageshow", "#scanHome", function() {
 	$("#beginScan").bind("click", function(){
-//		alert("Begin scan");
-		/* Phonegap BarcodeScanner Plugin */
-		try {
-		scanner = cordova.require("com.phonegap.plugins.barcodescanner.BarcodeScanner");
-//		var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-		alert('scanner loaded');
-		navigator.notification.vibrate(1000);
+		function beginScan(){
+//			navigator.notification.confirm('D \351 marrage du scanner2 ?', onConfirm, 'Barecode scanner', ['OK', 'Cancel']);
+			cordova.plugins.barcodeScanner.scan(
+				      function (result) {
+				    	  navigator.notification.alert('We got a barcode\n'+
+				    			  "Result: " + result.text +"\n"+
+				    			  "Format: " + result.format + "\n" +
+					              "Cancelled: " + result.cancelled
+				    			  , alertCallback, 'Titre', 'clic ici');
+				    	  document.getElementById('criteria').value = result.text;
+//				          alert("We got a barcode\n" +
+//				                "Result: " + result.text + "\n" +
+//				                "Format: " + result.format + "\n" +
+//				                "Cancelled: " + result.cancelled);
+				    	  
+				      }, 
+				      function (error) {
+				          alert("Scanning failed: " + error);
+				      }
+			);
 		}
-		catch(e) {
-		alert('scanner could not be loaded');
-		navigator.notification.vibrate(1000);
-		navigator.notification.vibrate(1000);
-		}
-		
-		scanner.scan( function (result) { 
 
-            alert("We got a barcode\n" + 
-            "Result: " + result.text + "\n" + 
-            "Format: " + result.format + "\n" + 
-            "Cancelled: " + result.cancelled);  
-
-           console.log("Scanner result: \n" +
-                "text: " + result.text + "\n" +
-                "format: " + result.format + "\n" +
-                "cancelled: " + result.cancelled + "\n");
-            document.getElementById("info").innerHTML = result.text;
-            console.log(result);
-            /*
-            if (args.format == "QR_CODE") {
-                window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
-            }
-            */
-
-        }, function (error) { 
-            console.log("Scanning failed: ", error); 
-        });
 	});
 	
 	$("#device").bind("click", function(){
